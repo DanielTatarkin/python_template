@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "PROJECT_NAME"
+version = "0.1.0"
+description = ""
+authors = ["Daniel Tatarkin <danieltatarkin@gmail.com>"]
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.272"
+pre-commit = "^3.3.3"
+
+[tool.ruff]
+line-length = 110
+
+extend-select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "UP", # Pyupgrade
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
