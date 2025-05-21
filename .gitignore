@@ -1,3 +1,14 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
 # Created by https://www.toptal.com/developers/gitignore/api/python,intellij+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,intellij+all
 

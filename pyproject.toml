@@ -1,36 +1,34 @@
-[tool.poetry]
-name = "<PROJECT_NAME>"
+[project]
+name = "new-python-template"
 version = "0.1.0"
-description = ""
+description = "Add your description here"
 readme = "README.md"
-packages = [{ include = "src" }]
+requires-python = ">=3.12"
+dependencies = [
+    "requests>=2.32.3",
+]
 
-[tool.poetry.dependencies]
-python = ">=3.12,<3.13"
-python-dotenv = "^1.0.1"
-
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.11.5"
-pre-commit = "^4.2.0"
-
-[tool.poetry.group.test.dependencies]
-pytest = "^8.3.5"
-pytest-cov = "^6.1.1"
+[dependency-groups]
+dev = [
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "ruff>=0.11.10",
+]
 
 [tool.ruff]
 line-length = 120
 
-extend-select = [
+lint.extend-select = [
+    "A",  # flake8-builtins
+    "ANN",# annotations
+    "B",  # flake8-bugbear
+    "C",  # flake8-comprehensions
     "E",  # pycodestyle errors
-    "W",  # pycodestyle warnings
     "F",  # pyflakes
     "I",  # isort
     "UP", # Pyupgrade
-    "C",  # flake8-comprehensions
-    "B",  # flake8-bugbear
+    "PL", # Pylint
+    "PTH",# enforce pathlib usage 
+    "RUF",# Ruff-specific rules
+    "W"   # pycodestyle warnings
 ]
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
